@@ -22,6 +22,7 @@ const TodoApp = () => {
     }
 
     const handleFinishTask = (id) => {
+        // - Solution avec de l'algorithmie
         // setTasks(t => {
         //     const copy = [...t];
         //     for(let i = 0; i < copy.length; i++) {
@@ -32,7 +33,21 @@ const TodoApp = () => {
         //     return copy;
         // });
 
+        // - Solution avec l'utilisation de la fonction 'map'
         setTasks(t => t.map(task => task.id !== id ? task : {...task, isFinish: true}));
+
+        // - Avec l'ecriture 'function'
+        // setTasks(function(t) {
+        //     return t.map(function(task) {
+        //         if(task.id !== id) {
+        //             return task;
+        //         }
+        //         return {
+        //             ...task, 
+        //             isFinish: true
+        //         };
+        //     })
+        // })
     }
 
     return (
